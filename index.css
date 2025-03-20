@@ -1,0 +1,118 @@
+.content span{
+color: #d4d4d4;
+}
+
+span , #humidity{
+  color: white;
+}
+
+.block{
+  display: block;
+  margin-bottom: 4px;
+}
+
+#tempView , #temperature{
+  font-size: 55px;
+}
+
+
+.address-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+@media (max-width: 750px) {
+  *{
+    font-size: 24px;
+  }
+  .thermal p {
+    font-size: 20px;
+  }
+  
+}
+
+@media (max-width: 460px) {
+  *{
+    font-size: 19px;
+  }
+
+  .top span{
+    font-size: 24px;
+  }
+
+  .thermal p span, .thermal p{
+    font-size: 16px;
+  }
+  
+}
+
+@media (max-width: 390px) {
+  *{
+    font-size: 14px;
+  }
+  
+}
+
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 20px;
+  
+}
+
+.flex-row{
+  display: flex;
+  justify-content: space-between;
+  
+  flex-wrap: wrap;
+}
+
+
+
+.content{
+  display: flex;
+  flex-grow: 2;
+  background-color: rgba(62, 62, 62, 0.103);
+
+  margin-left: 7px;
+  margin-right: 7px;
+
+  padding-top: 10px;
+  padding-left: 10px;
+
+  max-width:300px ;
+  border-radius: 20px;
+  
+}
+
+
+.spacing{
+  margin: 7px;
+  margin-top: 15px;
+  background-color: #3e3e3e1a;
+  border-radius: 20px;
+  
+}
+
+td img , th img {
+  width: 44%;
+  height: auto;
+}
+
+
+td , th{
+  width: 20%; 
+  text-align: center;
+  padding: 8px;
+  padding-bottom: 10px;
+  color:  white;
+}
+
+/* #error{
+  padding: 10px;
+  color: rgb(114, 113, 112);
+} */

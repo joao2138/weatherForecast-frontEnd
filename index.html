@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Previsão do tempo</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="./icons/weather.png" >
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="top">
+      <main>
+        <div class="flex-column">
+          <div class="address-content">
+            <span id="address">Cidade</span>
+            <span id="weekDay"></span>
+          </div>
+          <!-- div address-content -->
+
+          <div>
+            <span id="tempView" class="block"> 
+              <span id="temperature">27</span>° 
+            </span>
+            <span id="summary">limpo</span>
+
+          </div>
+          <!-- final do bloco tempView -->
+
+          <div class="thermal">
+            <p>
+              <span id="min-temp">25</span>° /
+              <span id="max-temp">30</span>
+              ° Sensação térmica de
+              <span id="thermalSensation">35</span>°
+            </p>
+          </div>
+        </div>
+      </main>
+      <!-- final do main -->
+    </div>
+    <!-- final div top -->
+
+    <div class="bottom">
+      <div>
+        <div class="flex-row">
+          <div class="content">
+            <div>
+              <span>Índice UV</span>
+              <p id="indexUV"></p>
+            </div>
+          </div>
+          <div class="content">
+            <div>
+              <span>Umidade</span>
+              <p><span id="humidity"></span>%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- aqui será exibida a previsão dos proximos dias -->
+      <div class="spacing">
+        <div class="forecastsView">
+          <table id="forecasts">
+            <tr>
+              <th>Dia</th>
+              <th>Temp</th>
+              <th></th>
+              <th>IndexUV</th>
+              <th>
+                <img src="icons/water-icon.svg" alt="Ícone">
+              </th>
+            </tr>
+            <!-- cabeçalhos -->
+          </table>
+        </div>
+        <!-- forecastView -->
+      </div>
+      <!-- spacing -->
+    </div>
+    <!-- fim bottom -->
+
+    
+    <div id="error">
+      <p>Conectando</p>
+    </div>
+    <!-- esta div normalmente será sempre sobrescrita se não houver nenhum erro ou exibirá uma mensagem de erro  -->
+
+    <script src="main.js"></script>
+  </body>
+</html>
