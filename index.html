@@ -5,89 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Previsão do tempo</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="./icons/weather.png" >
+    <link rel="shortcut icon" type="image/x-icon" href="./icons/weather.png" />
 
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/search.css" />
   </head>
   <body>
-    <div class="top">
-      <main>
-        <div class="flex-column">
-          <div class="address-content">
-            <span id="address">Cidade</span>
-            <span id="weekDay"></span>
-          </div>
-          <!-- div address-content -->
+    <div class="container">
+      <div class="top">
+        <main>
+          <div class="flex-column">
+            <div class="address-content">
+              <div>
+                <span id="address">Cidade</span>
+                <span id="ico" onclick="ShowSearchSection()">
+                  <img
+                    src="./icons/edit.ico"
+                    alt="edit"
+                    width="23px"
+                    height="23px"
+                  >
+                </span>
+              </div>
+              <span id="weekDay"></span>
+            </div>
+            <!-- div address-content -->
 
-          <div>
-            <span id="tempView" class="block"> 
-              <span id="temperature">27</span>° 
-            </span>
-            <span id="summary">limpo</span>
-
-          </div>
-          <!-- final do bloco tempView -->
-
-          <div class="thermal">
-            <p>
-              <span id="min-temp">25</span>° /
-              <span id="max-temp">30</span>
-              ° Sensação térmica de
-              <span id="thermalSensation">35</span>°
-            </p>
-          </div>
-        </div>
-      </main>
-      <!-- final do main -->
-    </div>
-    <!-- final div top -->
-
-    <div class="bottom">
-      <div>
-        <div class="flex-row">
-          <div class="content">
             <div>
-              <span>Índice UV</span>
-              <p id="indexUV"></p>
+              <span id="tempView" class="block">
+                <span id="temperature">27</span>°
+              </span>
+              <span id="summary">limpo</span>
+              
+            </div>
+            <!-- final do bloco tempView -->
+
+            <div class="thermal">
+              <p>
+                <span id="min-temp">25</span>° /
+                <span id="max-temp">30</span>
+                ° Sensação térmica de
+                <span id="thermalSensation">35</span>°
+              </p>
+            </div>
+            <!-- thermal -->
+
+          </div>
+        </main>
+        <!-- final do main -->
+         
+      </div>
+      <!-- final div top -->
+
+
+      <div class="bottom">
+        <div>
+          <div class="flex-row">
+            <div class="content">
+              <div>
+                <span>Índice UV</span>
+                <p id="indexUV"></p>
+              </div>
+            </div>
+            <div class="content">
+              <div>
+                <span>Umidade</span>
+                <p><span id="humidity"></span>%</p>
+              </div>
             </div>
           </div>
-          <div class="content">
-            <div>
-              <span>Umidade</span>
-              <p><span id="humidity"></span>%</p>
-            </div>
+        </div>
+        <!-- aqui será exibida a previsão dos proximos dias -->
+        <div class="spacing">
+          <div class="forecastsView">
+            <table id="forecasts">
+              <tr>
+                <th>Dia</th>
+                <th>Temp</th>
+                <th></th>
+                <th>IndexUV</th>
+                <th>
+                  <img src="icons/water-icon.svg" alt="Ícone" />
+                </th>
+              </tr>
+              <!-- cabeçalhos -->
+            </table>
           </div>
+          <!-- forecastView -->
         </div>
+        <!-- spacing -->
       </div>
-      <!-- aqui será exibida a previsão dos proximos dias -->
-      <div class="spacing">
-        <div class="forecastsView">
-          <table id="forecasts">
-            <tr>
-              <th>Dia</th>
-              <th>Temp</th>
-              <th></th>
-              <th>IndexUV</th>
-              <th>
-                <img src="icons/water-icon.svg" alt="Ícone">
-              </th>
-            </tr>
-            <!-- cabeçalhos -->
-          </table>
-        </div>
-        <!-- forecastView -->
-      </div>
-      <!-- spacing -->
-    </div>
-    <!-- fim bottom -->
+      <!-- fim bottom -->
 
+      <div id="error">
+        <p>Conectando</p>
+      </div>
+      <!-- esta div normalmente será sempre sobrescrita se não houver nenhum erro ou exibirá uma mensagem de erro  -->
+
+    </div> <!--container-->
+
+    <div class="search" id="searchSection">
+      <input
+        type="text"
+        value="Vitória"
+        placeholder="Inserir local"
+        id="input"
+        >
+
+      <div id="submit" onclick="main()">
+        <img src="./icons/Submit.svg" alt="submit" width="40px">
+      </div>
+    </div>
     
-    <div id="error">
-      <p>Conectando</p>
-    </div>
-    <!-- esta div normalmente será sempre sobrescrita se não houver nenhum erro ou exibirá uma mensagem de erro  -->
-
     <script src="main.js"></script>
   </body>
 </html>

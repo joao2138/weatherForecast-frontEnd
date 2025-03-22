@@ -1,16 +1,22 @@
 const ip = "localhost";
 const url = `http://${ip}:4000/weatherforecast`;
-//substituir o ip de localhost para o ip da maquina para poder funcionar com
+//substituir o ip de localhost para o ip da maquina onde está o servidor para poder funcionar com
 //outros dispositivos na rede também
 
+var isHideSearch = true;
 
-//enviar o local como parametro
-let querry = {city: "Vila Velha"}
 
 
 async function main() {
   try {
+    //enviar o local como parametro
+    var querry = {city: getInput()}
+
+
     const data = await Get(url, querry);
+
+    const element = document.getElementById("searchSection");
+    element.style.display = "none";
     
     update(data);
     updateTable(data);
@@ -25,6 +31,10 @@ async function main() {
 function showError(){
   const div = document.getElementById("error");
   div.innerHTML = "";
+
+  const element = document.getElementById("searchSection");
+  element.style.display = "none";
+  isHideSearch = true;
 
   const erro = document.createElement("p");
 
@@ -63,6 +73,7 @@ function update(data) {
 
   const erro = document.getElementById("error");
   erro.innerHTML = "";
+  erro.style = "none";
 
   const city = document.getElementById("address");
   const weekDay = document.getElementById("weekDay");
@@ -80,7 +91,8 @@ function updateTable(data){
     humidity : "humidity"
   };
 
-  const table = document.getElementById("forecasts")
+  const table = document.getElementById("forecasts");
+  table.innerHTML = "";
 
   data["nextDays"].forEach(element => {
     const tRow = document.createElement("tr");
@@ -131,5 +143,25 @@ async function Get(url , querry = null) {
   return await response.json();
 }
 
+function ShowSearchSection(){
+  if(isHideSearch == false){
+    const element = document.getElementById("searchSection");
+    element.style.display = "inline-flex";
+
+    isHideSearch = true;
+  }
+  else{
+    const element = document.getElementById("searchSection");
+    element.style.display = "none";
+
+    isHideSearch = false;
+  }
+
+}
+
+function getInput(){
+  const inputValue = document.getElementById("input");
+  return inputValue.value;
+}
 
 main();

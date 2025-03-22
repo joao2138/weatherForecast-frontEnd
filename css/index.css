@@ -15,6 +15,11 @@ span , #humidity{
   font-size: 55px;
 }
 
+#ico{
+  margin-left: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
 
 .address-content{
   display: flex;
@@ -112,7 +117,6 @@ td , th{
   color:  white;
 }
 
-/* #error{
-  padding: 10px;
-  color: rgb(114, 113, 112);
-} */
+#sendPlace{
+  margin: 10px 10px;
+}
