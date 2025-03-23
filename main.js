@@ -91,8 +91,8 @@ function updateTable(data){
     humidity : "humidity"
   };
 
-  const table = document.getElementById("forecasts");
-  table.innerHTML = "";
+  const tbody = document.getElementById("forecasts");
+  tbody.innerHTML = "";
 
   data["nextDays"].forEach(element => {
     const tRow = document.createElement("tr");
@@ -120,7 +120,7 @@ function updateTable(data){
       
     }
 
-    table.appendChild(tRow);
+    tbody.appendChild(tRow);
     
   });
   
